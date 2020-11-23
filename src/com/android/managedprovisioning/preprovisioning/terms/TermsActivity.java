@@ -31,7 +31,6 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import androidx.car.widget.PagedListView;
 
 import com.android.managedprovisioning.R;
 import com.android.managedprovisioning.analytics.MetricsWriterFactory;
@@ -43,7 +42,6 @@ import com.android.managedprovisioning.common.SetupLayoutActivity;
 import com.android.managedprovisioning.common.StoreUtils;
 import com.android.managedprovisioning.common.Utils;
 import com.android.managedprovisioning.model.ProvisioningParams;
-import com.android.managedprovisioning.preprovisioning.terms.adapters.TermsListAdapterCar;
 import com.android.managedprovisioning.preprovisioning.terms.adapters.TermsListAdapter;
 
 import java.util.List;
@@ -98,11 +96,7 @@ public class TermsActivity extends SetupLayoutActivity {
     }
 
     private void setUpTermsList(List<TermsDocument> terms, @ColorInt int statusBarColor) {
-        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)) {
-            PagedListView pagedListView = findViewById(R.id.terms_container);
-            pagedListView.setAdapter(new TermsListAdapterCar(getApplicationContext(), terms,
-                    statusBarColor));
-
+        if (false) {
         } else {
             ExpandableListView container = findViewById(R.id.terms_container);
             container.setAdapter(

@@ -29,15 +29,6 @@ public class ConsentUiHelperFactory {
         Activity activity, AccessibilityContextMenuMaker contextMenuMaker,
         ConsentUiHelperCallback callback, Utils utils,
         SettingsFacade settingsFacade) {
-        if (shouldShowLegacyUi(activity)) {
-            return new LegacyConsentUiHelper(activity, contextMenuMaker, callback, utils);
-        } else {
             return new PrimaryConsentUiHelper(activity, callback, utils);
-        }
-    }
-
-    private static boolean shouldShowLegacyUi(Activity activity) {
-        // Android Auto still uses the old UI, so we need to ensure compatibility with it.
-        return activity.getPackageManager().hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE);
-    }
+      }
 }

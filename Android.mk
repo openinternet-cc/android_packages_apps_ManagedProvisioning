@@ -11,11 +11,8 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_JAVA_LIBRARIES += android.car
-
 LOCAL_STATIC_ANDROID_LIBRARIES += \
         androidx.legacy_legacy-support-v4 \
-        androidx.car_car \
         setupcompat \
         setupdesign
 
